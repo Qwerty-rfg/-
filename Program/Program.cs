@@ -51,16 +51,23 @@ class Program
             }
         }
 
-        Console.WriteLine("Отфильтрованный массив:");
+        if (result.Count == 0)
+{
+    Console.WriteLine("Строк с повторяющимися элементами не найдено.");
+}
+else
+{
+    Console.WriteLine("Отфильтрованный массив:");
+}
 
-        for (int i = 0; i < num1.GetLength(0); i++)
+       if (result.Count > 0)
+{
+    for (int i = 0; i < num1.GetLength(0); i++)
+    {
+        for (int j = 0; j < num1.GetLength(1); j++)
         {
-            for (int j = 0; j < num1.GetLength(1); j++)
-            {
-                Console.Write(num1[i, j] + " ");
-            }
-
-            Console.WriteLine();
+            Console.Write(num1[i, j] + " ");
         }
+        Console.WriteLine();
     }
 }
